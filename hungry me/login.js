@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (users[email].role === "admin") {
                     window.location.href = "dashboard.html";
                 } else if (users[email].role === "owner") {
-                    window.location.href = "add menu.html"; // ✅ Fixed filename
+                    window.location.href = "restaurant.html"; // ✅ Fixed filename
                 }
             } else {
                 alert("Invalid email or password.");
