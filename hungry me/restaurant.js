@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Redirect example (update with the actual URLs)
             if (restaurantName === "Jollibee") {
-                window.location.href = "dashboard.html";
+                window.location.href = "add menu.html";
             } else if (restaurantName === "Greenwich") {
-                window.location.href = "dashboard.html";
+                window.location.href = "add menu.html";
             } else if (restaurantName === "Mang Inasal") {
-                window.location.href = "dashboard.html";
+                window.location.href = "add menu.html";
             }
         });
     });
