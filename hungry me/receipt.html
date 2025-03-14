@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="css/receipt.css">
+    <link rel="icon" type="image/x-icon" href="img/img.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap">
+    <script defer src="js/receipt.js"></script>
+</head>
+<body>
+<!--sidebar-->
+<div id="mySidebar" class="sidebar">
+    <button class="closebtn" onclick="closeNav()">×</button>
+    <h1>HungryMe.</h1>
+
+    <a href="dashboard.html">
+        <span class="material-symbols-outlined">grid_view</span> Dashboard
+    </a>    
+
+    <a href="TRANSACTION HISTORY.html">
+        <span class="material-symbols-outlined">receipt</span> Transaction History
+    </a>
+
+    
+    <a href="login.html" class="logout"><span class="material-symbols-outlined"> logout</span>Logout
+    </a>
+</div>
+        
+
+<div class="topbar">
+    <div class="topbar-left">
+        <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <div class="profile-actions">
+        <span class="material-symbols-outlined" id="profile-icon">person</span>
+
+			<!-- Notification Bell -->
+			<a href="users.html" class="notification-bell">
+				<span class="material-symbols-outlined">notifications</span>
+				<span class="notification-count">1</span> <!-- Notification count -->
+			</a>
+
+        <div class="profile-dropdown" id="profile-dropdown">
+            <a href="login.html" id="logout-btn">
+                <span class="material-symbols-outlined">logout</span>Logout</a>
+        </div>
+    </div>       
+</div>
+
+
+<div class="receipt-container">
+    <h2 class="order-number">#1000</h2>
+    <div class="item">
+        <span>JOLLIBEE BURGER STEAK</span>
+        <span>PHP 50.00</span>
+    </div>
+    <div class="item">
+        <span>YUMBURGER SOLO</span>
+        <span>PHP 35.00</span>
+    </div>
+    <div class="total">
+        <strong>TOTAL:</strong>
+        <strong>PHP 381.00</strong>
+    </div>
+</div>
+
+</body>
+</html>
