@@ -5,7 +5,7 @@ var earning = document.getElementById('earning').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'polarArea',
     data: {
-        labels: ['Jollibee', 'Mang Inasal', 'Greenwich'],
+        labels: ['Mang Peping', 'Matutina-Gerrys Seafood House', 'Ciudad Elmina Restaurant'],
         datasets: [{
             label: 'Traffic Source',
             data: [1100, 1500, 2205],
