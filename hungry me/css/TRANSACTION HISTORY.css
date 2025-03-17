@@ -1,0 +1,274 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background-color: #969696;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 20px;
+    height: 60px;
+    border-bottom: 1px solid #4E604E;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: #00B074;
+    margin: 0;
+    padding: 0 15px; /* Add horizontal padding for spacing */
+    white-space: nowrap; /* Keep logo text on one line */
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow nav to expand and fill middle space */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Space between navigation items */
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff; /* White text for visibility on black background */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.topbar-nav a:hover {
+    color: #00B074;
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-size: 24px; /* Slightly smaller than sidebar’s 30px for topbar fit */
+    vertical-align: middle;
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 0 15px; /* Add padding for spacing */
+}
+
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+span#profile-icon {
+    color: white;
+}
+/* Notification Dropdown */
+.notification-dropdown {
+    position: absolute;
+    right: 35px; /* Adjusted to align under the bell */
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    min-width: 250px; /* Wider for notification content */
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: black;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notification-time {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.notification-item:hover {
+    background: #f0f0f0;
+}
+
+.view-all {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #00B074;
+    font-weight: bold;
+    text-align: center;
+}
+
+.view-all:hover {
+    background: #f0f0f0;
+    color: #008055;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.profile-dropdown a:hover {
+    background: #f0f0f0;
+    color: #ff0000;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    background-color: #7B8B75;
+    min-height: calc(100vh - 60px); /* Maximize vertical space below topbar */
+    width: 100%; /* Ensure full width */
+}
+
+/* Table Styles (unchanged) */
+.table-container {
+    width: 90%;
+    margin: auto;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #666565;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #6f7e66;
+}
+
+thead {
+    background-color: #000000;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #6f7e66;
+}
+
+td {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+.status {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.delivered {
+    color: rgb(39, 170, 39);
+}
+
+.status.pending {
+    color: orange;
+}
+
+.receipt-link {
+    color: #4a86ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.receipt-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .topbar-left {
+        width: 100%;
+        justify-content: flex-start; /* Align logo to the left on smaller screens */
+    }
+    .topbar-nav {
+        width: 100%;
+        justify-content: flex-start; /* Align items to the left */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        gap: 15px; /* Slightly smaller gap for smaller screens */
+    }
+    .profile-actions {
+        width: 100%;
+        justify-content: flex-end; /* Push profile actions to the right */
+        padding: 10px 0;
+    }
+    .notification-dropdown {
+        right: 10px; /* Adjust for smaller screens */
+    }
+    .table-container {
+        padding: 10px;
+    }
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-nav {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left in column layout */
+    }
+    .notification-dropdown {
+        min-width: 200px; /* Slightly smaller width for very small screens */
+    }
+}
