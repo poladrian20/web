@@ -1,0 +1,488 @@
+/* Add these styles at the end of your existing dashboard.css, replacing previous .settings-container and related styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --green: #7B8B75;
+    --white: #fff;
+    --white2: #f5f5f5;
+    --black1: #222;
+    --grey: #999;
+    --blue: #00B074;
+}
+
+body {
+    margin: 0;
+    background-color: #969696;
+    color: #333;
+    overflow: auto;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 20px;
+    height: 60px;
+    width: 100%;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: var(--blue);
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.topbar-nav a:hover {
+    color: var(--blue);
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    color: white;
+}
+
+/* Profile Actions */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    padding: 0 15px;
+}
+
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.notification-bell:hover {
+    color: var(--blue);
+}
+
+.notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.profile-dropdown a:hover {
+    background: #f0f0f0;
+    color: #ff0000;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    min-width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.notification-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white2);
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--black1);
+}
+
+.notification-header .notification-count {
+    position: static;
+    transform: none;
+    background: var(--blue);
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+.notification-list {
+    padding: 10px 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+}
+
+.notification-item:hover {
+    background: #f0f0f0;
+}
+
+.notification-item .material-symbols-outlined {
+    margin-right: 10px;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--black1);
+}
+
+.notification-time {
+    font-size: 12px;
+    color: var(--grey);
+    display: block;
+    margin-top: 2px;
+}
+
+.notification-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.notification-footer .btn {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.notification-footer .btn:hover {
+    background: #009966; /* Slightly darker shade of --blue for hover */
+}
+/* Settings Page */
+.settings-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.settings-container h2 {
+    color: #2e7d32;
+    margin: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #e0e0e0;
+}
+
+.profile-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.profile-details p {
+    margin: 5px 0 0;
+    color: #757575;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.settings-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 20px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    color: #2e7d32;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.edit-btn {
+    background: #f5a623;
+    border: none;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s;
+}
+
+.edit-btn:hover {
+    background: #e69520;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item .label {
+    font-size: 12px;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-item .value {
+    font-size: 14px;
+    color: #333333;
+    word-break: break-word;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.modal-header h3 {
+    color: #2e7d32;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.close-modal {
+    cursor: pointer;
+    font-size: 24px;
+    color: #757575;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #333333;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46,125,50,0.3);
+}
+
+.form-group input[readonly] {
+    background: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.save-btn {
+    background: #f5a623;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background: #e69520;
+}
+
+/* Responsive Design for Settings */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-image {
+        margin-bottom: 15px;
+    }
+    .modal-content {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-card {
+        padding: 15px;
+    }
+    .info-grid {
+        gap: 15px;
+    }
+    .section-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .edit-btn {
+        width: 100%;
+    }
+}

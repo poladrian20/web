@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Topbar */
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: #00B074;
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.topbar-nav a:hover {
+    color: #00B074;
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    color: #00B074;
+}
+
+
+.topbar-nav  {
+    color: #fff;
+}
+
+/* Profile Actions and Notification Bell */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.profile-actions span {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Form Container */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-header h3::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #00B074;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.form-header p {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Form Layout */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Inputs & Select */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00B074;
+    box-shadow: 0 0 8px rgba(0, 176, 116, 0.2);
+    background: #ffffff;
+}
+
+/* Price Input with Currency Symbol */
+.input-with-icon {
+    position: relative;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #666;
+}
+
+.input-with-icon input {
+    padding-left: 35px;
+}
+
+/* File Input */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.file-upload-wrapper input[type="file"] {
+    width: 100%;
+    height: 48px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.file-upload-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.file-upload-wrapper input[type="file"]:hover + .file-upload-text,
+.file-upload-wrapper input[type="file"]:focus + .file-upload-text {
+    border-color: #00B074;
+    background: #ffffff;
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(90deg, #00B074 0%, #009d5f 100%);
+    color: white;
+    padding: 14px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #009d5f 0%, #00854f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 176, 116, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    .topbar-left {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .topbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .profile-actions {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+    .form-container {
+        width: 95%;
+        padding: 25px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .form-group {
+        width: 100%;
+    }
+    .btn {
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .topbar-nav a {
+        padding: 8px 0;
+    }
+    .form-header h3 {
+        font-size: 24px;
+    }
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+}
