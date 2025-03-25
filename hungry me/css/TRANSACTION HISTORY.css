@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c3cfe2 100%, #c3cfe2 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: #00B074;
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.topbar-nav a:hover {
+    color: #00B074;
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    color: #00B074;
+}
+
+
+.topbar-nav  {
+    color: #fff;
+}
+
+/* Profile Actions and Notification Bell */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.profile-actions span {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    min-width: 12px;
+    text-align: center;
+    line-height: 12px;
+}
+
+.notification-dropdown {
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 250px;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.notification-time {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.notification-item:hover {
+    background: #f0f0f0;
+}
+
+.view-all {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #00B074;
+    font-weight: bold;
+    text-align: center;
+}
+
+.view-all:hover {
+    background: #f0f0f0;
+    color: #008055;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 40px;
+    top: 60px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+    background: #00B074;
+    color: #fff;
+}
+/* Table Styles */
+.table-container {
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #666565;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #6f7e66;
+}
+
+thead {
+    background-color: #000000;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 2px solid #6f7e66;
+}
+
+td {
+    color: black;
+}
+
+.status {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.delivered {
+    color: rgb(39, 170, 39);
+}
+
+.status.pending {
+    color: orange;
+}
+
+.receipt-link {
+    color: #4a86ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.receipt-link:hover {
+    text-decoration: underline;
+}
+
+
+
+.footer {
+    background: #8a9bb7; /* Matches both screenshots */
+    color: #ffffff; /* White text for contrast */
+    padding: 40px 20px;
+    margin-top: 283px; /* Ensures separation from content above */
+    border-top: 2px solid #a1b0c9; /* Subtle top border */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* For responsiveness */
+    gap: 20px; /* Ensures spacing on smaller screens */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Prevents sections from getting too cramped */
+    margin: 0 20px;
+    text-align: left; /* Aligns text to the left as in both screenshots */
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #ffffff; /* White headings */
+    font-size: 18px; /* Matches both screenshots */
+    font-weight: 600; /* Matches other headings in your design */
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #e6ebf4; /* Light gray-blue for body text */
+    line-height: 1.6; /* Matches the spacing in both screenshots */
+}
+
+/* Quick Links Section */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0; /* Matches the vertical spacing in both screenshots */
+}
+
+.footer-section a {
+    color: #e6ebf4; /* Light gray-blue for links */
+    text-decoration: none;
+    font-size: 14px; /* Matches both screenshots */
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #00B074; /* Matches your primary accent color on hover */
+    text-decoration: underline;
+}
+
+/* Contact Us Section - Icon Alignment */
+.footer-section p i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #e6ebf4; /* Same color as the text */
+    font-size: 14px; /* Matches the text size */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #a1b0c9; /* Matches both screenshots */
+    margin-top: 20px;
+    color: #e6ebf4; /* Light gray-blue for copyright */
+    font-size: 13px; /* Matches both screenshots */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center-align text on smaller screens */
+    }
+    .footer-section {
+        margin: 15px 0;
+    }
+    .footer-section p i {
+        margin-right: 8px; /* Maintain icon spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    .footer-section p,
+    .footer-section a,
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center-align text on smaller screens */
+    }
+    .footer-section {
+        margin: 15px 0;
+    }
+    .footer-section p i {
+        margin-right: 8px; /* Maintain icon spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    .footer-section p,
+    .footer-section a,
+    .footer-bottom {
+        font-size: 12px;
+    }
+}

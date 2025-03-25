@@ -1,0 +1,209 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background-color: #969696;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 0 20px;
+    height: 60px;
+    border-bottom: 1px solid #4E604E;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: #00B074;
+    margin: 0;
+    padding: 0 15px; /* Horizontal padding */
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Take available space */
+    justify-content: flex-start; /* Align to the left */
+    gap: 20px; /* Space between items */
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.topbar-nav a:hover {
+    color: #00B074; /* Hover color */
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000; /* Logout hover color */
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined'; /* Ensure font applies */
+    font-size: 24px; /* Consistent size */
+    vertical-align: middle;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; /* Outline style */
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 0 15px;
+}
+
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.profile-dropdown a:hover {
+    background: #f0f0f0;
+    color: #ff0000;
+}
+
+/* Dashboard Section */
+.dashboard {
+    flex-grow: 1;
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* Adjust for topbar */
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #666565;
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(228, 223, 223);
+}
+
+.check-icon, .delete-icon {
+    cursor: pointer;
+    pointer-events: auto;
+    stroke-width: 3px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.check-icon:hover, .delete-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Action Buttons */
+.actions {
+    gap: 10px;
+    justify-content: center;
+    display: flex;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .dashboard {
+        padding: 15px;
+    }
+    .topbar {
+        flex-wrap: wrap;
+    }
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .topbar-left {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .topbar-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .profile-actions {
+        width: 100%;
+        justify-content: flex-end;
+        padding: 10px 0;
+    }
+    table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .topbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>Login Page</title>
+  <link rel="icon" type="image/png" href="img/img.png">
+</head>
+
+<body>       
+  <div class="container" id="container">
+    <div class="form-container sign-up">
+      <form id="login-form">
+        <h1>SHOP OWNER</h1>
+        <select id="shop-select" required>
+          <option value="" disabled selected>Select your shop</option>
+          <option value="shop1">Mang Peping</option>
+          <option value="shop2">Matutina-Gerry's Seafood House</option>
+          <option value="shop3">Ciudad Elmina Restaurant</option>
+        </select>
+        <input type="email" id="email" placeholder="Email" required />
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Password" required />
+          <span class="toggle-password" onclick="togglePassword('password')">Show</span>
+        </div>
+        <p>Don't have an account? <a href="signup.html" class="toggle-login">Sign up</a></p>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form id="admin-login-form">
+        <h1>ADMIN</h1>
+        <input type="email" id="admin-email" placeholder="Email" required/>
+        <div class="password-container">
+          <input type="password" id="admin-password" placeholder="Password" required />
+          <span class="toggle-password" onclick="togglePassword('admin-password')">Show</span>
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Welcome, Shop Owner</h1>
+          <button class="hidden" id="login">Log In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Welcome, Admin</h1>
+          <button class="hidden" id="register">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+  <script>
+    function togglePassword(inputId) {
+      const passwordInput = document.getElementById(inputId);
+      const toggleText = passwordInput.nextElementSibling;
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleText.textContent = 'Hide';
+      } else {
+        passwordInput.type = 'password';
+        toggleText.textContent = 'Show';
+      }
+    }
+  </script>
+</body>
+</html>
