@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c3cfe2 100%, #c3cfe2 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a; /* Consistent with your design */
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.topbar-left h1 {
+    font-size: 1.5rem;
+    color: #00B074;
+    margin: 0;
+    padding: 0 15px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.topbar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.topbar-nav a:hover {
+    color: #00B074;
+}
+
+.topbar-nav .logout:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    color: #00B074;
+}
+
+/* Profile Actions and Notification Bell */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.profile-actions span {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+span.notification-time {
+    color: black;
+}
+.notification-bell {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    min-width: 12px;
+    text-align: center;
+    line-height: 12px;
+}
+
+span#profile-icon {
+    color: white;
+}
+
+.notification-dropdown {
+    position: absolute;
+    right: 35px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 250px;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: black;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notification-time {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.notification-item:hover {
+    background: #f0f0f0;
+}
+
+.view-all {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #00B074;
+    font-weight: bold;
+    text-align: center;
+}
+
+.view-all:hover {
+    background: #f0f0f0;
+    color: #008055;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.profile-dropdown a:hover {
+    background: #00B074;
+    color: #ffffff;
+}
+
+
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Welcome Section */
+.welcome-container {
+    position: relative;
+    margin: -50px auto 20px;
+    max-width: 800px;
+    background: linear-gradient(45deg, rgba(0, 176, 116, 0.9), rgba(0, 141, 93, 0.9));
+    color: #fff;
+    padding: 40px;
+    border-radius: 30px 30px 0 0;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.welcome-container h2 {
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-container p {
+    font-size: 1.1rem;
+}
+
+/* Shared Table Styles for Orders Summary and Transactions Summary */
+.orders-summary-table, .transactions-summary-table {
+    background: rgba(255, 255, 255, 0.98); /* Slightly more opaque for a cleaner look */
+    border-radius: 20px;
+    padding: 30px; /* Increased padding for better spacing */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow for depth */
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 176, 116, 0.1); /* Subtle border for definition */
+}
+
+.orders-summary-table h3, .transactions-summary-table h3 {
+    color: #00B074;
+    font-size: 1.8rem; /* Slightly larger heading */
+    margin-bottom: 25px;
+    text-align: center; /* Centered heading for better balance */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.orders-summary-table table, .transactions-summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.orders-summary-table th, .orders-summary-table td, .transactions-summary-table th, .transactions-summary-table td {
+    padding: 20px; /* Increased padding for better spacing */
+    border-bottom: 1px solid #e8ecef; /* Lighter border for a cleaner look */
+    text-align: center; /* Center all table content */
+}
+
+.orders-summary-table th, .transactions-summary-table th {
+    background: linear-gradient(90deg, #333, #444); /* Gradient for a more polished header */
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px; /* Slight letter spacing for readability */
+    border-top-left-radius: 10px; /* Rounded corners for the header */
+    border-top-right-radius: 10px;
+}
+
+.orders-summary-table td, .transactions-summary-table td {
+    font-size: 16px; /* Larger font for better readability */
+    color: #333;
+    background: #f9fbfc; /* Very light background for rows */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Highlight numbers specifically */
+.orders-summary-table td:not(:nth-child(3)), .transactions-summary-table td:not(:nth-child(3)) {
+    font-weight: 700; /* Bold numbers */
+    font-size: 18px; /* Slightly larger font for numbers */
+    color: #00B074; /* Use the brand color for numbers */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* Style for non-numeric cells (e.g., "Cash on Delivery") */
+.transactions-summary-table td:nth-child(3) {
+    font-weight: 500;
+    color: #555;
+}
+
+/* Hover effect for rows */
+.orders-summary-table tr:hover td, .transactions-summary-table tr:hover td {
+    background: rgba(0, 176, 116, 0.1); /* Subtle green tint on hover */
+}
+
+/* View All Link */
+.view-all-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #00B074;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: rgba(0, 176, 116, 0.05); /* Subtle background for the link */
+}
+
+.view-all-link:hover {
+    background: rgba(0, 176, 116, 0.2);
+    color: #008055;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Responsive Design for Tables */
+@media (max-width: 768px) {
+    .orders-summary-table th, .orders-summary-table td, .transactions-summary-table th, .transactions-summary-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .orders-summary-table td:not(:nth-child(3)), .transactions-summary-table td:not(:nth-child(3)) {
+        font-size: 16px; /* Slightly smaller for numbers on smaller screens */
+    }
+
+    .orders-summary-table th, .transactions-summary-table th {
+        font-size: 12px;
+    }
+
+    .orders-summary-table table, .transactions-summary-table table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .orders-summary-table th, .orders-summary-table td, .transactions-summary-table th, .transactions-summary-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .orders-summary-table td:not(:nth-child(3)), .transactions-summary-table td:not(:nth-child(3)) {
+        font-size: 14px;
+    }
+
+    .orders-summary-table h3, .transactions-summary-table h3 {
+        font-size: 1.4rem;
+    }
+
+    .view-all-link {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+
+.footer {
+    background: #8a9bb7; /* Darker shade of your bluish-gray */
+    color: #ffffff; /* White text for contrast */
+    padding: 40px 20px;
+    margin-bottom: 1px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #ffffff; /* White headings */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #e6ebf4; /* Very light gray-blue for links, still readable on #8a9bb7 */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #ffffff; /* Brightens to white on hover */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #a1b0c9; /* Slightly lighter shade for the border */
+    margin-top: 20px;
+    color: #e6ebf4; /* Light gray-blue for the copyright text */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topbar {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        height: auto;
+    }
+    
+    .topbar-nav {
+        gap: 15px;
+        margin: 10px 0;
+    }
+    
+    .welcome-container {
+        margin: -30px auto 15px;
+        padding: 25px;
+    }
+    
+    .order-item, .customer-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .welcome-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
+/* Responsive Design for Table */
+@media (max-width: 768px) {
+    .orders-table th, .orders-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .orders-table th {
+        font-size: 12px;
+    }
+
+    .orders-table table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .orders-table th, .orders-table td {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .order-status {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .orders-table h3 {
+        font-size: 1.4rem;
+    }
+}

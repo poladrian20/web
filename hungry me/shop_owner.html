@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Owner</title>
+    <link rel="stylesheet" href="css/shop_owner.css">
+    <link rel="icon" type="image/x-icon" href="img/img.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script defer src="js/shop-owner.js"></script>
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-left">
+            <h1>HungryMe.</h1>
+        <div class="topbar-nav">
+            <a href="dashboard.html">
+                <span class="material-symbols-outlined">grid_view</span> Dashboard
+            </a>    
+            <a href="shop_owner.html">
+                <span class="material-symbols-outlined">storefront</span> Shop Owner
+            </a>
+            <a href="settings.html" class="active">
+                <span class="material-symbols-outlined">settings</span> Settings
+            </a>
+            <a href="login.html" class="logout">
+                <span class="material-symbols-outlined">logout</span> Logout
+            </a>
+        </div>
+    </div>
+
+    <div class="profile-actions">
+        <span class="material-symbols-outlined" id="profile-icon">person</span>
+        <a href="#" class="notification-bell" id="notification-bell">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-count">3</span>
+        </a>
+        
+        <!-- Notification Dropdown -->
+        <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+                <h3>Notifications</h3>
+                <span class="notification-count">3 unread</span>
+            </div>
+            <div class="notification-list">
+                <div class="notification-item">
+                    <span class="material-symbols-outlined">storefront</span>
+                    <div class="notification-content">
+                        <p>New shop owner login</p>
+                        <span class="notification-time">5 minutes ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <span class="material-symbols-outlined">storefront</span>
+                    <div class="notification-content">
+                        <p>New shop owner login</p>
+                        <span class="notification-time">5 minutes ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <span class="material-symbols-outlined">storefront</span>
+                    <div class="notification-content">
+                        <p>New shop owner login</p>
+                        <span class="notification-time">5 minutes ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="notification-footer">
+                <a href="shop_owner.html" class="btn">View All Notifications</a>
+            </div>
+        </div>
+
+        <div class="profile-dropdown" id="profile-dropdown">
+            <a href="login.html" id="logout-btn">
+                <span class="material-symbols-outlined">logout</span> Logout
+            </a>
+        </div>
+    </div>
+</div>
+
+    <main>
+        <section class="shop-table-section">
+            <div class="filter-bar">
+                <button id="total-btn" class="filter-btn">Total Shops</button>
+                <button id="approved-btn" class="filter-btn">Approved</button>
+                <button id="pending-btn" class="filter-btn active">Pending Shops</button>
+                <button id="view-shops-btn" class="action-btn view-btn">View Shops</button>
+            </div>
+            <div id="current-view-label" class="current-view-label">
+                Current View: <span id="current-view-name">Total Shops</span>
+            </div>
+            <div id="shop-table-container">
+                <table id="shop-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Shop Name</th>
+                            <th>Description</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Business Hours</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shop-table-body">
+                        <tr>
+                            <td>1</td>
+                            <td>Kainan ni mangpeping</td>
+                            <td>Delicious meals delivered fast!</td>
+                            <td>28JG+M7J, De Venecia Hi-way Extension, Dagupan, 2400 Pangasinan</td>
+                            <td>+1-555-987-6543</td>
+                            <td>mangpeping@email.com</td>
+                            <td>Everyday: 8 AM - 9 PM</td>
+                            <td><span class="status pending">Approved</span></td>
+                            <td>
+                                <button class="approve-btn" onclick="approveShop(0, 'pending')">Approve</button>
+                                <button class="delete-btn" onclick="deleteShop(0, 'pending')">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mary’s Bakery</td>
+                            <td>Delicious meals delivered fast!</td>
+                            <td>123 Bread Rd, Springfield</td>
+                            <td>+1-555-123-4567</td>
+                            <td>marysbakery@hungryme.com</td>
+                            <td>Mon-Fri: 8 AM - 6 PM</td>
+                            <td><span class="status approved">Approved</span></td>
+                            <td><button class="delete-btn" onclick="deleteShop(1, 'pending')">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tom’s Diner</td>
+                            <td>Classic diner experience!</td>
+                            <td>789 Main St, Springfield</td>
+                            <td>+1-555-789-1234</td>
+                            <td>tomsdiner@hungryme.com</td>
+                            <td>Daily: 7 AM - 9 PM</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="approve-btn" onclick="approveShop(2, 'pending')">Approve</button>
+                                <button class="delete-btn" onclick="deleteShop(2, 'pending')">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="shop-list-view" class="shop-list">
+                    <!-- Populated dynamically by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+
+
+<!-- Edit Shop Modal -->
+<div id="edit-shop-modal" class="modal">
+    <div class="modal-content">
+        <h2>Edit Shop Details</h2>
+        <form id="edit-shop-form">
+            <input type="hidden" id="edit-shop-index">
+            <!-- Other fields remain the same -->
+            <label for="edit-shop-name">Shop Name:</label>
+            <input type="text" id="edit-shop-name" name="edit-shop-name" required><br>
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name="edit-description" required></textarea><br>
+            <label for="edit-address">Address:</label>
+            <input type="text" id="edit-address" name="edit-address" required><br>
+            <label for="edit-phone">Phone:</label>
+            <input type="text" id="edit-phone" name="edit-phone" required><br>
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" name="edit-email" required><br>
+
+            <label>Business Hours:</label>
+            <div class="business-hours-container">
+                <select id="edit-days" name="edit-days" class="hours-dropdown" required>
+                    <option value="" disabled selected>Select Days</option>
+                    <option value="Everyday">Everyday</option>
+                    <option value="Mon-Fri">Mon-Fri</option>
+                    <option value="Weekends">Weekends</option>
+                    <option value="Custom">Custom</option>
+                </select>
+                <select id="edit-start-time" name="edit-start-time" class="hours-dropdown" required>
+                    <option value="" disabled selected>Start Time</option>
+                    <!-- Time options will be populated by JavaScript -->
+                </select>
+                <select id="edit-end-time" name="edit-end-time" class="hours-dropdown" required>
+                    <option value="" disabled selected>End Time</option>
+                    <!-- Time options will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <div class="modal-buttons">
+                <button type="button" id="close-edit-modal-btn" class="modal-btn close-btn">Close</button>
+                <button type="submit" id="edit-shop-submit" class="modal-btn add-btn">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+        <!-- Edit Shop Modal -->
+        <div id="edit-shop-modal" class="modal">
+            <div class="modal-content">
+                <h2>Edit Shop Details</h2>
+                <form id="edit-shop-form">
+                    <input type="hidden" id="edit-shop-index">
+                    <label for="edit-shop-name">Shop Name:</label>
+                    <input type="text" id="edit-shop-name" name="edit-shop-name" required><br>
+
+                    <label for="edit-description">Description:</label>
+                    <textarea id="edit-description" name="edit-description" required></textarea><br>
+
+                    <label for="edit-address">Address:</label>
+                    <input type="text" id="edit-address" name="edit-address" required><br>
+
+                    <label for="edit-phone">Phone:</label>
+                    <input type="text" id="edit-phone" name="edit-phone" required><br>
+
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" name="edit-email" required><br>
+
+                    <label for="edit-hours">Business Hours:</label>
+                    <input type="text" id="edit-hours" name="edit-hours" required><br>
+
+                    <div class="modal-buttons">
+                        <button type="button" id="close-edit-modal-btn" class="modal-btn close-btn">Close</button>
+                        <button type="submit" id="edit-shop-submit" class="modal-btn add-btn">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
